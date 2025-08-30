@@ -235,6 +235,16 @@ return {
             },
           },
         },
+
+        -- LSP de pico8
+        pico8_ls = {
+          cmd = { 'pico8-ls', '--stdio' },
+          filetypes = { 'pico8', 'p8' },
+          root_dir = function(fname)
+            return vim.fs.dirname(fname)
+          end,
+          settings = {},
+        },
       }
 
       -- Ensure the servers and tools above are installed
